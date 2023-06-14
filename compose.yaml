@@ -1,0 +1,19 @@
+services:
+  frontend:
+    image: api-frontend:latest
+    volumes:
+      - ./frontend:/app
+    depends_on:
+      - backend
+    ports:
+      - 3000:3000
+
+  backend: 
+    image: api-backend:latest
+    depends_on:
+      - mongo
+    ports:
+      - 5000:5000
+      
+  mongo:
+    image: mongo
