@@ -1,8 +1,6 @@
 services:
   frontend:
     image: api-frontend:latest
-    volumes:
-      - ./frontend:/app
     depends_on:
       - backend
     ports:
